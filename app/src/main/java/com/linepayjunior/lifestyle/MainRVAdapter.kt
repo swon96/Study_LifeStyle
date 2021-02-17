@@ -24,9 +24,26 @@ class MainRVAdapter(val context:Context, val list_model:ArrayList<Model>) : Recy
         return list_model.size
     }
 
-    override fun onBindViewHolder(holder: Holder, position: Int) {
-    // holder 클래스의 bind 함수를 사용하여 item의 title 내용을 id:text_area인 Text view의 텍스트에 매핑시켜준다.
 
+    // ItemClick 이라는 Interface를 생성하여, view와 int를 인자로 가진 함수(onClick1)를 생성
+    interface ItemClick {
+        fun onClick1(view:View, position:Int)
+    }
+
+    var itemClick : ItemClick? = null
+
+
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+
+        // Holer에서 view에 Click Listener를 달고, 그 위에서 onClick 을 호출해준다.
+        if(itemClick != null){
+            holder?.itemView?.setOnClickListener{ v
+                -> itemClick?.onClick1(v, position)
+            }
+        }
+
+
+        // holder 클래스의 bind 함수를 사용하여 item의 title 내용을 id:text_area인 Text view의 텍스트에 매핑시켜준다.
         holder.bind(list_model[position], context)
 
     }
