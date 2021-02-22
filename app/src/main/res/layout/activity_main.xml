@@ -27,12 +27,12 @@
                         android:text="자취생으로 살아남기"
                         android:gravity="center"
                         android:textSize="20dp"
-                        android:textColor="fdd326"
+                        android:textColor="#fdd326"
                         android:textStyle="bold"
                 />
                 <View
                         android:layout_width="match_parent"
-                        android:layout_height="10dp"
+                        android:layout_height="2dp"
                         android:background="#000000"
                         app:layout_constraintTop_toBottomOf="@+id/header">
 
