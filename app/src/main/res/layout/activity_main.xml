@@ -7,14 +7,97 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-
-
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/mRecyclerView"
+    <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </androidx.recyclerview.widget.RecyclerView>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    tools:ignore="MissingConstraints">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="자취생으로 살아남기"
+                        android:gravity="center"
+                        android:textSize="20dp"
+                        android:textColor="fdd326"
+                        android:textStyle="bold"
+                />
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="#000000"
+                        app:layout_constraintTop_toBottomOf="@+id/header">
+
+                </View>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/header"
+                    tools:ignore="MissingConstraints">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    app:layout_constraintTop_toBottomOf="@+id/mRecyclerView"
+                    tools:ignore="MissingConstraints">
+
+                //섹션 1,2,3,4
+                <TextView
+                        android:id="@+id/figure_1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/figure_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:text="section1"/>
+                <TextView
+                        android:id="@+id/figure_2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/figure_3"
+                        app:layout_constraintStart_toEndOf="@+id/figure_1"
+                        android:text="section2"/>
+                <TextView
+                        android:id="@+id/figure_3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/figure_4"
+                        app:layout_constraintStart_toEndOf="@+id/figure_2"
+                        android:text="section3"/>
+                <TextView
+                        android:id="@+id/figure_4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/figure_3"
+                        android:text="section4"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

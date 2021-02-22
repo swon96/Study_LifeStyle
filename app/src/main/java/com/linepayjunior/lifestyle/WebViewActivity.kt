@@ -10,6 +10,12 @@ class WebViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_view)
 
-        webView_id.loadUrl("https://www.naver.com")
+        if(intent.hasExtra("url")){
+            webView_id.loadUrl(intent.getStringExtra("url"))
+
+        }
+
+
+//        webView_id.loadUrl("https://www.naver.com")
     }
 }
