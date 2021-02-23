@@ -66,6 +66,10 @@ class MainActivity : AppCompatActivity() {
             figure_3.setBackgroundColor(Color.parseColor("#ffffff"))
             figure_4.setBackgroundColor(Color.parseColor("#ffffff"))
 
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.framelayout_id,Section1Fragment())
+                .commit()
+
         }
 
         figure_2.setOnClickListener {
